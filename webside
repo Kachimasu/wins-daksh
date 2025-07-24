@@ -1,1 +1,120 @@
-webside format 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daksh & Wins</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+    }
+    .close {
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .submit-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #e60000;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo-toggle">
+        <div class="logo-circle"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Booking</a></li>
+        <li><a href="#">Tickets</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Socials</a></li>
+      </ul>
+      <div class="right-icons">
+        <div class="circle-icon"></div>
+        <div class="circle-icon"></div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1 class="popout">DAKSH & WINS</h1>
+    <img src="https://i.ibb.co/Kx7JF0Bh/426a79ea78b44abd1c36414389a57d31.jpg" alt="Character" class="deadpool-img" />
+    <div class="buttons">
+      <button class="book-now" onclick="openModal()">Book Now</button>
+      <button class="tickets">Tickets</button>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <form action="https://formsubmit.co/winschauhan8@gmail.com" method="POST">
+        <h2>What do you want to build?</h2>
+        <select name="service" required>
+          <option value="">Select one</option>
+          <option value="Resume">Resume</option>
+          <option value="Logo">Logo</option>
+          <option value="Design">Design</option>
+          <option value="Custom Photo Made">Custom Photo Made</option>
+        </select>
+
+        <input type="email" name="email" placeholder="Your Email" required />
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('bookingModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('bookingModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('bookingModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
